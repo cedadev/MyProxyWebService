@@ -21,7 +21,7 @@ except ImportError:
 
 setup(
     name =            	'MyProxyWebService',
-    version =         	'0.2.3',
+    version =         	'0.3.0',
     description =     	'MyProxy Web Service',
     long_description = 	'''\
 Provides a simple web service interface to MyProxyCA.  MyProxy is a Service for 
@@ -41,6 +41,11 @@ The unit tests include a test application served using paster.  Client scripts
 are also available which need no specialised installation or applications, only
 openssl and wget or curl which are typically available on Linux/UNIX based 
 systems.
+
+Changes for version 0.3.0
+=========================
+Remove enforcement of SSLv3 for shell script client ito address Poodle
+vulnerability.
 
 Changes for version 0.2.3
 =========================
