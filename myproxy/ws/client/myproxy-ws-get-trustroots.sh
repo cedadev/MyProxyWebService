@@ -76,7 +76,7 @@ else
 fi
 
 # Post request to MyProxy web service
-response=$(curl $uri --sslv3 $ca_arg -w " %{http_code}" -s -S)
+response=$(curl $uri $ca_arg -w " %{http_code}" -s -S)
 responsemsg=$(echo "$response"|sed '$s/ *\([^ ]* *\)$//')
 responsecode=$(echo $response|awk '{print $NF}')
 if [ "$responsecode" != "200" ]; then

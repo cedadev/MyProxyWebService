@@ -91,7 +91,7 @@ Examples are contained in ``myproxy.ws.client.test`` and ``myproxy.server.test``
     author_email =    	'Philip.Kershaw@stfc.ac.uk',
     maintainer =        'Philip Kershaw',
     maintainer_email =  'Philip.Kershaw@stfc.ac.uk',
-    url =             	'http://proj.badc.rl.ac.uk/ndg/wiki/Security/MyProxyWebService',
+    url =             	'https://github.com/cedadev/MyProxyWebService',
     platforms =         ['POSIX', 'Linux', 'Windows'],
     install_requires =  ['PasteDeploy', 
                          'PasteScript',

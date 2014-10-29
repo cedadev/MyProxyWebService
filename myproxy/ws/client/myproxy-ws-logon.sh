@@ -103,7 +103,7 @@ key=$(openssl req -new -newkey rsa:2048 -nodes -keyout /dev/stdout -subj /CN=dum
 # Alterations to change Base 64 encoding to URL safe Base 64
 encoded_certreq=$(cat $certreqfilepath|sed s/+/%2B/g)
 
-response=$(curl $uri --sslv3 -u $username:$password --data "certificate_request=$encoded_certreq" --capath $cadir -w " %{http_code}" -s -S)
+response=$(curl $uri -u $username:$password --data "certificate_request=$encoded_certreq" --capath $cadir -w " %{http_code}" -s -S)
 
 responsemsg=$(echo "$response"|sed '$s/ *\([^ ]* *\)$//')
 responsecode=$(echo $response|awk '{print $NF}')

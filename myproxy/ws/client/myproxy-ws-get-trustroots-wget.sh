@@ -94,7 +94,7 @@ fi
 error_output_filepath="/tmp/$UID-$RANDOM.csr"
 
 # Post request to MyProxy web service
-response=$(wget $uri  --secure-protocol SSLv3 $ca_arg -t 1 -O - 2> $error_output_filepath)
+response=$(wget $uri $ca_arg -t 1 -O - 2> $error_output_filepath)
 
 # Extract error output and clean up
 error_output=$(cat $error_output_filepath)

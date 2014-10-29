@@ -105,7 +105,7 @@ encoded_certreq=$(cat $certreqfilepath|sed s/+/%2B/g)
 # Clean up certificate request temporary file
 rm -f $certreqfilepath
 
-response=$(wget --secure-protocol SSLv3 --ca-directory=$cadir \
+response=$(wget --ca-directory=$cadir \
 --http-user=$username --http-password=$password \
 --post-data "certificate_request=$encoded_certreq" \
 -t 1 --auth-no-challenge $uri -O - 2>&1)
@@ -113,6 +113,7 @@ response=$(wget --secure-protocol SSLv3 --ca-directory=$cadir \
 # Pull out the response code from the output
 wget_statcode_line="HTTP request sent, awaiting response..."
 responsecode=$(echo "$response"|grep "$wget_statcode_line"|awk '{print $6}')
+echo X${responsecode}X
 if [ "$responsecode" != "200" ]; then
     echo "$responsemsg" >&2
     exit 1
