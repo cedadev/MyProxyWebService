@@ -113,7 +113,6 @@ response=$(wget --ca-directory=$cadir \
 # Pull out the response code from the output
 wget_statcode_line="HTTP request sent, awaiting response..."
 responsecode=$(echo "$response"|grep "$wget_statcode_line"|awk '{print $6}')
-echo X${responsecode}X
 if [ "$responsecode" != "200" ]; then
     echo "$responsemsg" >&2
     exit 1
